@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChatApp.API</name>
+    </assembly>
+    <members>
+        <member name="M:ChatApp.API.Controllers.AccountsController.Login(ChatApp.Application.Features.Accounts.Command.Login.LoginDto)">
+            <summary>
+            Login with username and password to start chatting
+            </summary>
+            <param name="loginDto"></param>
+            <returns></returns>
+            <remarks>
+            baseURL+Accounts/login
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.AccountsController.Register(ChatApp.Application.Features.Accounts.Command.Register.RegisterDto)">
+            <summary>
+            Take Data From Body
+            </summary>
+            <param name="registerDto"></param>
+            <returns>
+            Return Token-UserName-Email
+            </returns>
+            <remarks>
+            Roles:[1=Admin,2=Memeber]
+            //BaserURL+/api/register
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.AccountsController.UploadPhoto(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            This Function Take File(Image) and Added To Photo Table 
+            api/Accounts/upload-photo
+            </summary>
+            <param name="file"></param>
+            <returns>
+            Object Of Photo Class
+            </returns>
+            <remarks>
+            Take From File 
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.AccountsController.RemovePhoto(System.Int32)">
+            <summary>
+            This Endpoint Remove Member Photo 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <remarks>
+            api/Accounts/remove-photo/5
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.AccountsController.SetMainPhoto(System.Int32)">
+            <summary>
+            This End point Responsible for Set Main Photo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <remarks>
+            URL:=> api/Accounts/set-main-photo/2
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.AdminController.GetUsersWithRoles">
+            <summary>
+            Only Admin Can Modify Or View All Users With Roles and Edit them
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChatApp.API.Controllers.LikesController.AddLike(System.String)">
+            <summary>
+            Add Like To List 
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+            <remarks>baseURL/api/Likes/add-like/{userName}</remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.LikesController.GetUserLike(ChatApp.Application.Helper.LikesParams,System.Threading.CancellationToken)">
+            <summary>
+            Get User Likes From List 
+            </summary>
+            <param name="likesParams"></param>
+            <param name="ct"></param>
+            <returns></returns>
+            <remarks>
+            baseURL/api/Likes/get-user-like
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.MessagesController.AddMessage(ChatApp.Application.Features.Message.Command.AddMessage.AddMessageDto,System.Threading.CancellationToken)">
+            <summary>
+            Add New Message 
+            </summary>
+            <param name="addMessageDto"></param>
+            <param name="ct"></param>
+            <returns></returns>
+            <remarks>
+            baseURL+api/Messages/add-message
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.MessagesController.GetMessageForUser(ChatApp.Application.Helper.MessageParams,System.Threading.CancellationToken)">
+            <summary>
+            Get All Message For Current User
+            </summary>
+            <param name="messageParams"></param>
+            <param name="ct"></param>
+            <returns></returns>
+            <remarks>
+            baseURL+api/Messages/get-message-for-user
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.MessagesController.GetMessageRead(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get All Message That Read By Using Recipient UserName
+            </summary>
+            <param name="userName"></param>
+            <param name="ct"></param>
+            <returns></returns>
+            <remarks>
+            baseURL+api/Messages/get-message-read/ali
+            </remarks>
+        </member>
+        <member name="M:ChatApp.API.Controllers.MessagesController.DeleteMessage(System.Int32)">
+            <summary>
+            Delete Message When Two point are the same status in Deleted
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <remarks> 
+            baseURL+api/Messages/delete-message/1
+            </remarks>
+        </member>
+    </members>
+</doc>
